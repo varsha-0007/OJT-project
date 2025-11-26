@@ -61,3 +61,56 @@ body.light-mode .control-btn{ background:rgba(203,213,244,0.9);color:#1a202c;}
     border-color: #0855f7;
     box-shadow: 0 0 20px rgba(168,85,247,0.5);
 }
+
+.content{
+    padding: 25px;
+    max-height: calc(100vh - 66px);
+    overflow-y: auto;
+}
+
+.content::-webkit-scrollbar{
+    width: 6px;
+}
+.content::-webkit-scrollbar-thumb{
+    background-color: rgba(168, 85, 247, 0,6);
+    border-radius: 10px;
+}
+
+.menu{
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.title{
+    font-size: 46px;
+    font-weight:bold;
+    margin-bottom: 7px;
+    text-shadow: 0 0 40px rgba(168, 85, 247, 1.0);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse{
+    0%, 100%{
+        transform: scale(1.01);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+}
+
+.context{
+    font-size: 18px;
+    color: #d1d5db;
+    margin-bottom: 25px;
+    opacity:0.8;
+}
+
+.level-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:12px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
