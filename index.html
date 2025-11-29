@@ -36,6 +36,30 @@
             </div>        
         </div>
     </div>
+
+            html:
+            <div id="gameScreen" class="game-screen hidden">
+                <div class="game-header">
+                    <div class="game-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Level</div>
+                            <div class="stat-value" id="levelDisplay">1</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">⏱ Time</div>
+                            <div class="stat-value purple" id="timeDisplay">0.0s</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">👻 Ghosts</div>
+                            <div class="stat-value" id="ghostCount">0</div>
+                        </div>
+                    </div>
+                    <button class="menu-btn" id="backBtn">Menu</button>
+                </div>
+                <div class="game-area" id="gameArea"></div>
+                <p class="game-hint">Use <span>Arrow Keys</span> or <span>WASD</span> to move</p>
+            </div>
+
     <script src="script.js"></script>
 </body>
-</html>
+</html>  
