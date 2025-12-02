@@ -37,7 +37,6 @@
         </div>
     </div>
 
-            html:
             <div id="gameScreen" class="game-screen hidden">
                 <div class="game-header">
                     <div class="game-stats">
@@ -60,6 +59,21 @@
                 <p class="game-hint">Use <span>Arrow Keys</span> or <span>WASD</span> to move</p>
             </div>
 
+            <div id="gameoverScreen" class="gameover-screen hidden">
+                <div class="gameover-box">
+                    <div class="gameover-icon">👻</div>
+                    <h2 class="gameover-title">Caught!</h2>
+                    <p class="gameover-subtitle">A ghost caught up with you</p>
+                    <div class="time-display">
+                        <p class="time-label">Survival Time</p>
+                        <p class="time-value" id="finalTime">0.0s</p>
+                        <p class="new-record hidden" id="newRecord">🏆 New Best!</p>
+                    </div>
+                    <div class="gameover-buttons" id="gameoverButtons"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>  
