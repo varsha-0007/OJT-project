@@ -49,3 +49,74 @@ var soundConfigs = {
     collision:{freq:90, gain:0.28, duration:0.45},
     start:{freq:580, gain:0.18, duration:0.18}
 };
+function initAudio() {
+            if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+
+        function playSound(type) {
+            if (isMuted || !audioContext) return;
+            var osc = audioContext.createOscillator(), gain = audioContext.createGain();
+            osc.connect(gain); gain.connect(audioContext.destination);
+            var cfg = soundConfigs[type];
+            if (cfg) {
+                osc.frequency.value = cfg.freq;
+                gain.gain.setValueAtTime(cfg.gain, audioContext.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + cfg.duration);
+                osc.start(audioContext.currentTime);
+                osc.stop(audioContext.currentTime + cfg.duration);
+            }
+        }
+
+        function getElement(id) { return document.getElementById(id); }
+
+        function showScreen(screenId) {
+            ['menuScreen', 'gameScreen', 'gameoverScreen'].forEach(function(s) {
+                getElement(s).classList[s === screenId ? 'remove' : 'add']('hidden');
+            });
+        }
+
+        function renderLevels() {
+            var grid = getElement('levelsGrid');
+            grid.innerHTML = '';
+            levels.forEach(function(level, i) {
+                var card = document.createElement('div');
+                card.className = 'level-card';
+                card.innerHTML = '<div class="level-header"><div class="level-title">' + level.name +
+                    '</div><div class="level-number">' + (i + 1) + '</div></div><div class="level-description">' +
+                    level.description + '</div><button class="play-button">▶ Play</button>';
+                card.addEventListener('click', function() { playSound('click'); startGame(i); });
+                grid.appendChild(card);
+            });
+        }
+
+        function updateBestTime() {
+            getElement('bestTimeDisplay').innerHTML = bestTime > 0 ? 
+                '🏆 Best: <span style="color:#fff;font-weight:bold;">' + bestTime.toFixed(1) + 's</span>' : '';
+        }
+
+        function showMenu() {
+            playSound('click'); showScreen('menuScreen'); stopGame();
+        }
+
+        function showGameOver(time) {
+            playSound('collision'); showScreen('gameoverScreen');
+            getElement('finalTime').textContent = time.toFixed(1) + 's';
+            var newRec = getElement('newRecord');
+            if (time > bestTime) { bestTime = time; newRec.classList.remove('hidden'); updateBestTime(); }
+            else newRec.classList.add('hidden');
+            var btns = '<button class="gameover-btn retry-btn" id="retryBtn">🔄 Retry</button>';
+            if (currentLevel < levels.length - 1) btns += '<button class="gameover-btn next-btn" id="nextBtn">Next</button>';
+            btns += '<button class="gameover-btn menu-btn-gameover" id="menuBtn">Menu</button>';
+            getElement('gameoverButtons').innerHTML = btns;
+            getElement('retryBtn').addEventListener('click', function() { playSound('click'); startGame(currentLevel); });
+            if (currentLevel < levels.length - 1) 
+                getElement('nextBtn').addEventListener('click', function() { playSound('click'); startGame(currentLevel + 1); });
+            getElement('menuBtn').addEventListener('click', showMenu);
+        }
+
+        function startGame(idx) {
+            initAudio(); playSound('start'); currentLevel = idx;
+            getElement('levelDisplay').textContent = idx + 1;
+            getElement('ghostCount').textContent = '0';
+            showScreen('gameScreen'); initGame(levels[idx]);
+        }
