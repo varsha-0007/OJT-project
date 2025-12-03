@@ -71,6 +71,7 @@ body.light-mode .control-btn{ background:rgba(203,213,244,0.9);color:#1a202c;}
 .content::-webkit-scrollbar{
     width: 6px;
 }
+
 .content::-webkit-scrollbar-thumb{
     background-color: rgba(168, 85, 247, 0,6);
     border-radius: 10px;
@@ -114,6 +115,7 @@ body.light-mode .control-btn{ background:rgba(203,213,244,0.9);color:#1a202c;}
     margin-left: auto;
     margin-right: auto;
 }
+
 .level-card {
     background: rgba(31, 41, 55, 0.8);
     border: 2px solid #374151;
@@ -252,6 +254,7 @@ body.light-mode .control-btn{ background:rgba(203,213,244,0.9);color:#1a202c;}
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
 }
+
 .stat-label {
     font-size: 10px;
     color: #9ca3af;
