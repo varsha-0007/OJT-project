@@ -3,9 +3,10 @@
 ⏳ Time Rift Runner
 
 A fast-paced browser survival game where your past movements become ghost enemies. Dodge obstacles, outsmart your own echoes, and survive as long as possible.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🚀 Features
-
+---------------------
 🎮 Smooth player movement (WASD / Arrow Keys)
 
 👻 Ghost clones that replay your recorded paths
@@ -19,11 +20,14 @@ A fast-paced browser survival game where your past movements become ghost enemie
 📱 Responsive & mobile-friendly layout
 
 🏅 Best-time tracking per session
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 📂 Project Structure
-index.html       # Full game UI + CSS + JavaScript
-assets/          # (Optional) For future sprites, audio, etc.
+index.html       # Full game's structure
+style.css        # the stylng part of the html elements
+script.js        # how the interface works of the website
 README.md        # Documentation
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🕹 How to Play
 
@@ -33,23 +37,24 @@ Survive as long as possible
 
 Avoid:
 
-Your ghost clones
+-> Your ghost clones
 
-Moving obstacles
+-> Moving obstacles
 
-Reach higher levels with faster ghosts and trickier patterns
+-> Reach higher levels with faster ghosts and trickier patterns
 
 🔧 Technologies Used
 
-HTML5
+HTML
 
-CSS3 (UI, animations, theme system)
+CSS (UI, animations, theme system)
 
-Vanilla JavaScript
+JavaScript
 
 Web Audio API (sound effects)
 
 DOM-based rendering for players, ghosts, obstacles
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 📦 Setup
 
