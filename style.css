@@ -196,7 +196,6 @@ body.light-mode .control-btn { background: rgba(203, 213, 224, 0.9); color: #1a2
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(168, 85, 247, 0.5);
 }
-/* ------ */
 
 .how-to-play {
     background: rgba(31, 41, 55, 0.6);
