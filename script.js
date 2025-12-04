@@ -200,3 +200,21 @@ function gameLoop() {
     if (hit) { stopGame(); showGameOver(time); return; }
     gameState.animationId = requestAnimationFrame(gameLoop);
 }
+
+function stopGame() {
+                    gameState.isRunning = false;
+                    if (gameState.animationId) cancelAnimationFrame(gameState.animationId);
+                }
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    renderLevels(); updateBestTime();
+                    getElement('themeBtn').addEventListener('click', function() {
+                        initAudio(); playSound('click'); document.body.classList.toggle('light-mode');
+                    });
+                    getElement('soundBtn').addEventListener('click', function() {
+                        initAudio(); isMuted = !isMuted;
+                        getElement('soundBtn').textContent = isMuted ? '🔇' : '🔊';
+                        if (!isMuted) playSound('click');
+                    });
+                    getElement('backBtn').addEventListener('click', showMenu);
+                });
