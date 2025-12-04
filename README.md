@@ -1,61 +1,41 @@
 # OJT-project
 # TIME RIFT RUNNER
-⏳ Time Rift Runner
+# 👻 Time Rift Runner
 
-A fast-paced browser survival game where your past movements become ghost enemies. Dodge obstacles, outsmart your own echoes, and survive as long as possible.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A fast-paced survival maze game where your own past movements become your biggest enemy. Outsmart your ghost clones, survive longer, and unlock 10 increasingly challenging levels.
 
-🚀 Features
----------------------
-🎮 Smooth player movement (WASD / Arrow Keys)
+---
 
-👻 Ghost clones that replay your recorded paths
+## 🚀 Features
 
-🧱 Moving obstacles with unique patterns per level
+* Ghost Replay System – Your old paths return to haunt you.
+* 10 Dynamic Levels – Each stage adds speed, difficulty, and chaos.
+* Light/Dark Mode – Play in your style.
+* Real-time Stats – Live timer, ghost count, best time tracking.
+* Sleek UI – Smooth animations, glowing effects, and responsive layout.
 
-🌗 Light/Dark theme toggle
+---
 
-🔊 Minimalistic Web Audio API sound effects
+## 🎮 How to Play
 
-📱 Responsive & mobile-friendly layout
+* Move with **WASD** or **Arrow Keys**
+* Avoid ghost clones that mimic your previous runs
+* Beat your best time to **unlock the next level**
+* Survive as long as you can—every second counts!
 
-🏅 Best-time tracking per session
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
-📂 Project Structure
-index.html       # Full game's structure
-style.css        # the stylng part of the html elements
-script.js        # how the interface works of the website
-README.md        # Documentation
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 📁 Tech Stack
 
-🕹 How to Play
+* HTML
+* CSS3 (Glow effects, animations, responsive design)
+* JavaScript (Game logic, movement tracking, ghost mechanics)
 
-Move using WASD or Arrow Keys
+---
 
-Survive as long as possible
+## ▶️ Run the Game
 
-Avoid:
+Simply open index.html in any modern browser.
+---
 
--> Your ghost clones
-
--> Moving obstacles
-
--> Reach higher levels with faster ghosts and trickier patterns
-
-🔧 Technologies Used
-
-HTML
-
-CSS (UI, animations, theme system)
-
-JavaScript
-
-Web Audio API (sound effects)
-
-DOM-based rendering for players, ghosts, obstacles
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-📦 Setup
-
-Just open index.html in any modern browser — no installation required.
+deploy link: 
