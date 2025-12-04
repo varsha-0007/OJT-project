@@ -252,3 +252,222 @@ body.light-mode .control-btn{ background:rgba(203,213,244,0.9);color:#1a202c;}
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
 }
+
+.stat-label {
+    font-size: 10px;
+    color: #9ca3af;
+    margin-bottom: 3px;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stat-value.purple {
+    color: #a855f7;
+}
+
+.menu-btn {
+    padding: 8px 18px;
+    background: rgba(31, 41, 55, 0.9);
+    border: 2px solid #374151;
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    border-color: #a855f7;
+    transform: scale(1.05);
+}
+
+.game-area {
+    position: relative;
+    width: 700px;
+    height: 500px;
+    margin: 0 auto 12px;
+    background: #0a0a0a;
+    border: 4px solid rgba(168, 85, 247, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(168, 85, 247, 0.4);
+}
+
+.game-hint {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.game-hint span {
+    color: #a855f7;
+    font-weight: bold;
+}
+
+.player {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    border-radius: 3px;
+    box-shadow: 0 0 25px rgba(6, 182, 212, 1);
+    transition: none;
+    animation: playerGlow 1s ease-in-out infinite;
+}
+
+@keyframes playerGlow {
+    0%, 100% { box-shadow: 0 0 25px rgba(6, 182, 212, 1); }
+    50% { box-shadow: 0 0 35px rgba(6, 182, 212, 1), 0 0 50px rgba(6, 182, 212, 0.5); }
+}
+
+.ghost {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.8), rgba(147, 51, 234, 0.8));
+    border-radius: 3px;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+    transition: none;
+    animation: ghostFloat 0.8s ease-in-out infinite;
+}
+
+@keyframes ghostFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.obstacle {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(220, 38, 38, 0.9));
+    border-radius: 4px;
+    transition: none;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+}
+
+.gameover-screen {
+    text-align: center;
+    max-width: 450px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease;
+}
+
+.gameover-box {
+    background: rgba(31, 41, 55, 0.95);
+    border: 2px solid #374151;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.gameover-icon {
+    font-size: 60px;
+    margin-bottom: 12px;
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.gameover-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.gameover-subtitle {
+    font-size: 14px;
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.time-display {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.time-label {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 4px;
+}
+
+.time-value {
+    font-size: 46px;
+    font-weight: bold;
+    color: #a855f7;
+}
+
+.new-record {
+    font-size: 12px;
+    color: #fbbf24;
+    margin-top: 6px;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.gameover-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.gameover-btn {
+    flex: 1;
+    padding: 11px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.retry-btn {
+    background: linear-gradient(135deg, #a855f7, #9333ea);
+    color: white;
+}
+
+.retry-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.5);
+}
+
+.next-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.next-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.5);
+}
+
+.menu-btn-gameover {
+    background: rgba(31, 41, 55, 0.9);
+    border: 2px solid #374151;
+    color: white;
+}
+
+.menu-btn-gameover:hover {
+    border-color: #a855f7;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .title { font-size: 36px; }
+    .levels-grid { grid-template-columns: 1fr; }
+    .game-area { width: 100%; height: 400px; }
+}
