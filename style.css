@@ -24,6 +24,8 @@ body.light-mode .level-card { background: rgba(255, 255, 255, 0.9); border-color
 body.light-mode .stat-box { background: rgba(255, 255, 255, 0.95); color: #1a202c; }
 body.light-mode .game-area { background: #f7fafc; border-color: rgba(139, 92, 246, 0.5); }
 body.light-mode .control-btn { background: rgba(203, 213, 224, 0.9); color: #1a202c; }
+body.light-mode .sidebar { background: rgba(255, 255, 255, 0.95); border-color: #cbd5e0; }
+body.light-mode .sidebar-item { background: rgba(243, 244, 246, 0.9); border-color: #e5e7eb; }
 
 .header {
     background: rgba(31, 41, 55, 0.95);
@@ -71,14 +73,89 @@ body.light-mode .control-btn { background: rgba(203, 213, 224, 0.9); color: #1a2
     box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
 }
 
+.main-container {
+    display: flex;
+    height: calc(100vh - 66px);
+}
+
 .content {
+    flex: 1;
     padding: 25px;
-    max-height: calc(100vh - 66px);
     overflow-y: auto;
 }
 
 .content::-webkit-scrollbar { width: 6px; }
 .content::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.6); border-radius: 10px; }
+
+.sidebar {
+    width: 280px;
+    background: rgba(31, 41, 55, 0.95);
+    border-left: 2px solid #374151;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fbbf24;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sidebar-item {
+    background: rgba(55, 65, 81, 0.8);
+    border: 2px solid #374151;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-item:hover {
+    border-color: #a855f7;
+    transform: translateX(-3px);
+}
+
+.sidebar-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.sidebar-item-level {
+    font-size: 13px;
+    font-weight: bold;
+    color: #a855f7;
+}
+
+.sidebar-item-status {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.status-unlocked {
+    background: rgba(16, 185, 129, 0.3);
+    color: #10b981;
+}
+
+.status-locked {
+    background: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.sidebar-item-score {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.sidebar-item-score.no-score {
+    font-size: 14px;
+    color: #9ca3af;
+}
 
 .menu-screen {
     text-align: center;
@@ -148,6 +225,35 @@ body.light-mode .control-btn { background: rgba(203, 213, 224, 0.9); color: #1a2
     box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
 }
 
+.level-card.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.level-card.locked:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #374151;
+}
+
+.level-card.locked::before {
+    display: none;
+}
+
+.lock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
 .level-header {
     display: flex;
     justify-content: space-between;
@@ -176,6 +282,12 @@ body.light-mode .control-btn { background: rgba(203, 213, 224, 0.9); color: #1a2
 .level-description {
     font-size: 12px;
     color: #9ca3af;
+    margin-bottom: 5px;
+}
+
+.level-best {
+    font-size: 11px;
+    color: #fbbf24;
     margin-bottom: 10px;
 }
 
@@ -195,6 +307,13 @@ body.light-mode .control-btn { background: rgba(203, 213, 224, 0.9); color: #1a2
 .play-button:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(168, 85, 247, 0.5);
+}
+
+.play-button:disabled {
+    background: #4b5563;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 .how-to-play {
@@ -413,6 +532,13 @@ body.light-mode .control-btn { background: rgba(203, 213, 224, 0.9); color: #1a2
     animation: pulse 1s ease-in-out infinite;
 }
 
+.level-unlocked {
+    font-size: 14px;
+    color: #10b981;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
 .gameover-buttons {
     display: flex;
     gap: 8px;
@@ -449,6 +575,13 @@ body.light-mode .control-btn { background: rgba(203, 213, 224, 0.9); color: #1a2
     box-shadow: 0 5px 20px rgba(16, 185, 129, 0.5);
 }
 
+.next-btn:disabled {
+    background: #4b5563;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .menu-btn-gameover {
     background: rgba(31, 41, 55, 0.9);
     border: 2px solid #374151;
@@ -466,6 +599,14 @@ body.light-mode .control-btn { background: rgba(203, 213, 224, 0.9); color: #1a2
 
 .hidden {
     display: none !important;
+}
+
+@media (max-width: 1100px) {
+    .sidebar { width: 220px; }
+}
+
+@media (max-width: 900px) {
+    .sidebar { display: none; }
 }
 
 @media (max-width: 768px) {
