@@ -1,4 +1,7 @@
-var audioContext, isMuted = false, currentLevel = 0, bestTime = 0;
+var audioContext=false;
+var isMuted = false;
+var currentLevel = 0;
+var bestTime = 0;
 
 var gameState = {
     isRunning: false, player: null, ghosts: [], obstacles: [], recording: [],
