@@ -1,41 +1,85 @@
-# OJT-project
-# TIME RIFT RUNNER
-# 👻 Time Rift Runner
+👻 Time Rift Runner — README (Developer-Focused, Short Version)
+-----------------------------------------------------------------------------
+🚀 Overview
 
-A fast-paced survival maze game where your own past movements become your biggest enemy. Outsmart your ghost clones, survive longer, and unlock 10 increasingly challenging levels.
+Time Rift Runner is a fast-paced browser survival game where the player evades ghost clones that replay their past movements. The game features 10 progression-based levels, dynamic UI transitions, dark/light theme switching, ghost-trail mechanics, and persistent high-score storage.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
----
+🎮 Features
 
-## 🚀 Features
+⚡ Ghost Replay System — clones mimic your previous run path
 
-* Ghost Replay System – Your old paths return to haunt you.
-* 10 Dynamic Levels – Each stage adds speed, difficulty, and chaos.
-* Light/Dark Mode – Play in your style.
-* Real-time Stats – Live timer, ghost count, best time tracking.
-* Sleek UI – Smooth animations, glowing effects, and responsive layout.
+🔓 Level Progression — unlock levels by beating your best time
 
----
+🌓 Theme Toggle (Dark / Light mode)
 
-## 🎮 How to Play
+🔊 Sound Toggle with Web Audio API
 
-* Move with **WASD** or **Arrow Keys**
-* Avoid ghost clones that mimic your previous runs
-* Beat your best time to **unlock the next level**
-* Survive as long as you can—every second counts!
+🧠 LocalStorage for saving best times & unlocked levels
 
----
+📊 Sidebar High Scores
 
-## 📁 Tech Stack
+💠 Smooth Animations & Modern UI (neumorphism, gradients, soft glow)
 
-* HTML
-* CSS3 (Glow effects, animations, responsive design)
-* JavaScript (Game logic, movement tracking, ghost mechanics)
+🎯 Responsive Layout (works on mobile/tablet)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
----
+🛠 Tech Stack
 
-## ▶️ Run the Game
+HTML5
 
-Simply open index.html in any modern browser.
----
+CSS (gradients, animations, responsive design)
 
-deploy link: 
+JavaScript (Vanilla)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📂 Project Structure
+/Time-Rift-Runner
+│── index.html
+│── style.css
+│── script.js
+└── assets/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+▶️ How to Run
+
+Clone the repo:
+
+git clone https://github.com/yourname/time-rift-runner.git
+
+
+Open index.html in any modern browser.
+
+No build setup required — pure HTML/CSS/JS.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 Gameplay
+
+Move using WASD or Arrow Keys
+
+Survive as long as possible
+
+Ghosts appear based on your past movement
+
+Better time = next level unlock
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔧 Developer Notes
+
+Game world updates on a requestAnimationFrame loop
+
+Ghost positions are stored & replayed per frame
+
+Level configs are modular & easy to extend
+
+UI screens switch via class toggles (hidden)
+
+Scores stored in localStorage under:
+
+timeRiftScores
+
+timeRiftLevels
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Deployed link:
+    https://vercel.com/varsha-narvis-projects-bbfce39b/ojt-project
