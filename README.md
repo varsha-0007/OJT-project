@@ -1,4 +1,4 @@
-👻 Time Rift Runner — README (Developer-Focused, Short Version)
+👻 Time Rift Runner — README
 -----------------------------------------------------------------------------
 🚀 Overview
 
